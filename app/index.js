@@ -96,7 +96,7 @@ function updateStats() {
     var stepsCount = today.adjusted.steps;
     var stepsGoal = goals.steps;
     stepsBackground.style.opacity = Math.min(Math.max((stepsCount / stepsGoal / 2) + 0.5, 0.4), 1);
-    stepsGauge.groupTransform.rotate.angle = Math.min(-15 + ((stepsCount / stepsGoal) * 30), 12);
+    stepsGauge.groupTransform.rotate.angle = Math.max(15 - ((stepsCount / stepsGoal) * 30), -12);
 
     var distanceCount = today.adjusted.distance / 16.09344;
     var distanceGoal = goals.distance / 16.09344;
@@ -106,7 +106,7 @@ function updateStats() {
     var zoneCount = today.adjusted.activeZoneMinutes.total;
     var zoneGoal = goals.activeZoneMinutes.total;
     zoneBackground.style.opacity = Math.min(Math.max((zoneCount / zoneGoal / 2) + 0.5, 0.4), 1);
-    zoneGauge.groupTransform.rotate.angle = Math.max(15 - ((zoneCount / zoneGoal) * 30), -12);
+    zoneGauge.groupTransform.rotate.angle = Math.min(-15 + ((zoneCount / zoneGoal) * 30), 12);
 }
 
 function processWeather(weather) {
