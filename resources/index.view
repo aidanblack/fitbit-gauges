@@ -1,0 +1,187 @@
+<svg>
+
+<defs>
+  <symbol  id="hourMark">
+    <line x1="0" y1="-160" x2="0" y2="-194" stroke-width="4" fill="white" />
+  </symbol>
+  <symbol id="minuteMark">
+    <line x1="0" y1="-160" x2="0" y2="-168" stroke-width="2" fill="black" />
+  </symbol>
+  <symbol id="dayMark">
+    <line x1="0" y1="-104" x2="0" y2="-95" stroke-width="2" fill="black" />
+  </symbol>
+  <symbol id="fiveMinutes">
+    <g transform="rotate(6)"><use href="#minuteMark" /></g>
+    <g transform="rotate(12)"><use href="#minuteMark" /></g>
+    <g transform="rotate(18)"><use href="#minuteMark" /></g>
+    <g transform="rotate(24)"><use href="#minuteMark" /></g>
+  </symbol>
+  <symbol id="gaugeTop">
+    <g transform="rotate(6)" ><line x1="0" y1="-160" x2="0" y2="-172" stroke-width="2" fill="black" /></g>
+    <g transform="rotate(12)"><line x1="0" y1="-160" x2="0" y2="-176" stroke-width="2" fill="black" /></g>
+    <g transform="rotate(18)"><line x1="0" y1="-160" x2="0" y2="-180" stroke-width="2" fill="black" /></g>
+    <g transform="rotate(24)"><line x1="0" y1="-160" x2="0" y2="-184" stroke-width="2" fill="black" /></g>
+  </symbol>
+  <symbol id="gaugeBottom">
+    <g transform="rotate(6)" ><line x1="0" y1="-160" x2="0" y2="-184" stroke-width="2" fill="black" /></g>
+    <g transform="rotate(12)"><line x1="0" y1="-160" x2="0" y2="-180" stroke-width="2" fill="black" /></g>
+    <g transform="rotate(18)"><line x1="0" y1="-160" x2="0" y2="-176" stroke-width="2" fill="black" /></g>
+    <g transform="rotate(24)"><line x1="0" y1="-160" x2="0" y2="-172" stroke-width="2" fill="black" /></g>
+  </symbol>
+  <symbol id="fiveDays">
+    <g transform="rotate(6)" ><use href="#dayMark" /></g>
+    <g transform="rotate(18)"><use href="#dayMark" /></g>
+    <g transform="rotate(30)"><use href="#dayMark" /></g>
+    <g transform="rotate(42)"><use href="#dayMark" /></g>
+    <g transform="rotate(54)"><use href="#dayMark" /></g>
+  </symbol>
+</defs>
+
+<rect id="background" />
+
+  <g id="batteryBackground" fill="#00CC00">
+    <arc id="batteryArc" x="-20" y="-20" width="376" height="376" visibility="visible" arc-width="20" start-angle="300" sweep-angle="30" />
+  </g>
+  <g id="stepsBackground" fill="#CCAA00">
+    <arc id="stepsArc" x="-20" y="-20" width="376" height="376" visibility="visible" arc-width="20" start-angle="30" sweep-angle="30" />
+  </g>
+  <g id="distanceBackground" fill="#3366CC">
+    <arc id="distanceArc" x="-20" y="-20" width="376" height="376" visibility="visible" arc-width="20" start-angle="120" sweep-angle="30" />
+  </g>
+  <g id="zoneBackground" fill="#CC7700">
+    <arc id="zoneArc" x="-20" y="-20" width="376" height="376" visibility="visible" arc-width="20" start-angle="210" sweep-angle="30" />
+  </g>
+
+  <g id="battery" transform="translate(168,168) rotate(0)">
+  <line class="shadow" x1="0" y1="0" x2="-130" y2="-130" fill="white" stroke-width="4" />
+</g>
+<g id="steps" transform="translate(168,168) rotate(0)">
+  <line class="shadow" x1="0" y1="0" x2="130" y2="-130" fill="white" stroke-width="4" />
+</g>
+<g id="distance" transform="translate(168,168) rotate(0)">
+  <line class="shadow" x1="0" y1="0" x2="130" y2="130" fill="white" stroke-width="4" />
+</g>
+<g id="zone" transform="translate(168,168) rotate(0)">
+  <line class="shadow" x1="0" y1="0" x2="-130" y2="130" fill="white" stroke-width="4" />
+</g>
+
+<!-- <circle cx="50" cy="50" r="6" fill="black" />
+<circle cx="286" cy="50" r="6" fill="black" />
+<circle cx="50" cy="286" r="6" fill="black" />
+<circle cx="286" cy="286" r="6" fill="black" /> -->
+
+  <g transform="translate(168,168)">
+
+  <circle cx="0" cy="0" r="168" fill="#666666" />
+  <circle cx="0" cy="0" r="159" fill="#333333" />
+  <circle cx="0" cy="0" r="115" fill="#666666" />
+  <circle cx="0" cy="0" r="106" fill="#111111" />
+  <circle cx="0" cy="0" r="104" fill="#666666" />
+  <circle cx="0" cy="0" r="95" fill="#111111" />
+
+  <g transform="rotate(0)"  ><use href="#hourMark" /></g>
+  <g transform="rotate(30)" ><use href="#hourMark" /></g>
+  <g transform="rotate(60)" ><use href="#hourMark" /></g>
+  <g transform="rotate(90)" ><use href="#hourMark" /></g>
+  <g transform="rotate(120)"><use href="#hourMark" /></g>
+  <g transform="rotate(150)"><use href="#hourMark" /></g>
+  <g transform="rotate(180)"><use href="#hourMark" /></g>
+  <g transform="rotate(210)"><use href="#hourMark" /></g>
+  <g transform="rotate(240)"><use href="#hourMark" /></g>
+  <g transform="rotate(270)"><use href="#hourMark" /></g>
+  <g transform="rotate(300)"><use href="#hourMark" /></g>
+  <g transform="rotate(330)"><use href="#hourMark" /></g>
+
+<g transform="rotate(0)"  ><use href="#fiveMinutes" /></g>
+<g transform="rotate(30)" ><use href="#gaugeTop" /></g>
+<g transform="rotate(60)" ><use href="#fiveMinutes" /></g>
+<g transform="rotate(90)" ><use href="#fiveMinutes" /></g>
+<g transform="rotate(120)"><use href="#gaugeBottom" /></g>
+<g transform="rotate(150)"><use href="#fiveMinutes" /></g>
+<g transform="rotate(180)"><use href="#fiveMinutes" /></g>
+<g transform="rotate(210)"><use href="#gaugeBottom" /></g>
+<g transform="rotate(240)"><use href="#fiveMinutes" /></g>
+<g transform="rotate(270)"><use href="#fiveMinutes" /></g>
+<g transform="rotate(300)"><use href="#gaugeTop" /></g>
+<g transform="rotate(330)"><use href="#fiveMinutes" /></g>
+
+<g id="dateMonth" transform="rotate(0)"><arc x="-115" y="-115" width="230" height="230" fill="white"
+arc-width="9" start-angle="24" sweep-angle="12" /></g>
+
+<g id="dateDay" transform="rotate(0)"><arc x="-104" y="-104" width="208" height="208" fill="white"
+arc-width="10" start-angle="0" sweep-angle="12" /></g>
+
+<g transform="rotate(0)"  ><use href="#fiveDays" /></g>
+<g transform="rotate(60)" ><use href="#fiveDays" /></g>
+<g transform="rotate(120)"><use href="#fiveDays" /></g>
+<g transform="rotate(180)"><use href="#fiveDays" /></g>
+<g transform="rotate(240)"><use href="#fiveDays" /></g>
+<g transform="rotate(300)"><use href="#fiveDays" /></g>
+<g transform="rotate(0)"><use href="#dayMark" /></g>
+<g transform="rotate(12)"><use href="#dayMark" /></g>
+
+<image x="-110" y="-110" width="20" height="20" href="battery.png" />
+<image x="90" y="-110" width="20" height="30" href="footprints.png" />
+<image x="90" y="85" width="20" height="30" href="signpost.png" />
+<image x="-110" y="90" width="20" height="20" href="dart.png" />
+
+<g transform="rotate(0)"  ><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">12</text></g>
+<g transform="rotate(30)" ><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">1</text></g>
+<g transform="rotate(60)" ><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">2</text></g>
+<g transform="rotate(90)" ><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">3</text></g>
+<g transform="rotate(300)"><text x="0" y="145" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">4</text></g>
+<g transform="rotate(330)"><text x="0" y="145" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">5</text></g>
+<g transform="rotate(0)"  ><text x="0" y="145" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">6</text></g>
+<g transform="rotate(30)" ><text x="0" y="145" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">7</text></g>
+<g transform="rotate(60)" ><text x="0" y="145" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">8</text></g>
+<g transform="rotate(270)"><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">9</text></g>
+<g transform="rotate(300)"><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">10</text></g>
+<g transform="rotate(330)"><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">11</text></g>
+
+<g transform="rotate(0)"  ><text x="0" y="-70" fill="white" font-family="System-Regular" font-size="20" text-anchor="middle">30</text></g>
+<g transform="rotate(60)" ><text x="0" y="-70" fill="white" font-family="System-Regular" font-size="20" text-anchor="middle">5</text></g>
+<g transform="rotate(300)"><text x="0" y="85" fill="white" font-family="System-Regular" font-size="20" text-anchor="middle">10</text></g>
+<g transform="rotate(0)"  ><text x="0" y="85" fill="white" font-family="System-Regular" font-size="20" text-anchor="middle">15</text></g>
+<g transform="rotate(60)" ><text x="0" y="85" fill="white" font-family="System-Regular" font-size="20" text-anchor="middle">20</text></g>
+<g transform="rotate(300)"><text x="0" y="-70" fill="white" font-family="System-Regular" font-size="20" text-anchor="middle">25</text></g>
+
+<arc x="-85" y="-25" width="50" height="50" fill="#666666"
+arc-width="5" start-angle="0" sweep-angle="360" />
+<text id="heartRate" x="-60" y="6" fill="white"
+  font-family="System-Regular" font-size="20" text-anchor="middle">bpm</text>
+
+<!-- <mask id="weatherMask">
+  <!-- <circle cx="228" cy="168" r="25"  /> -->
+  <arc x="35" y="-25" width="50" height="50" fill="#666666"
+    arc-width="5" start-angle="0" sweep-angle="360" />
+  <!-- </mask>
+<svg x="-168" y="-168" width="336" height="336" mask="#weatherMask">
+  <g transform="translate(263,173)">
+  <g id="gradient">
+    <gradientRect x="-60" y="-60" width="120" height="120"
+      gradient-type="bilinear"
+      gradient-x1="30" gradient-y1="30"
+      gradient-x2="90" gradient-y2="90"
+      gradient-color1="blue"
+      gradient-color2="green"
+      gradient-color3="red"
+      gradient-color4="yellow" />
+  </g>
+</g>
+</svg> -->
+<image id="weatherImage" x="40" y="-20" width="40" height="40" href="" />
+
+  <g id="hourHand" class="shadow">
+    <line x1="0" y1="20" x2="0" y2="-100" fill="white" stroke-width="8" />
+  </g>
+  <g id="minuteHand" class="shadow">
+    <line x1="0" y1="20" x2="0" y2="-120" fill="white" stroke-width="6" />
+  </g>
+  <g id="secondHand" class="shadow">
+    <line x1="0" y1="30" x2="0" y2="-140" fill="#CC1111" stroke-width="4" />
+  </g>
+  <circle cx="0" cy="0" r="5" fill="#CC1111" />
+
+</g>
+
+</svg>

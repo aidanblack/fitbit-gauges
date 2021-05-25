@@ -1,0 +1,114 @@
+<html>
+
+<style>
+    .shadow {
+        filter: drop-shadow(5px 10px 5px #66666699);
+    }
+</style>
+
+<script language="javascript">
+    var Now = new Date(Date.now());
+    var clockTimer;
+
+    function SetClock() {
+        var Seconds = Now.getSeconds();
+        var Minutes = Now.getMinutes() + Seconds / 60;
+        var Hours = Now.getHours() + Minutes / 60;
+        document.getElementById("secondHand").setAttribute('transform', 'rotate(' + (Seconds * 6) + ')');
+        document.getElementById("minuteHand").setAttribute('transform', 'rotate(' + (Minutes * 6) + ')');
+        document.getElementById("hourHand").setAttribute('transform', 'rotate(' + (Hours * 30) + ')');
+        clockTimer = setTimeout(SetClock, 60000);
+    }
+</script>
+
+<body onload="SetClock()" style="background-color: #333333">
+
+    <div
+        style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" id="clock" width="336" height="336" viewBox="0,0,336,336">
+
+            <rect x="0" y="0" width="100%" height="100%" fill="black" />
+
+            <g transform="translate(168 168)">
+
+                <rect x="0" y="-244" width="84" height="100" fill="#009900" transform="rotate(300)" />
+                <rect x="-84" y="-244" width="84" height="100" fill="#009900" transform="rotate(330)" />
+                <rect x="0" y="-244" width="84" height="100" fill="#BB9900" transform="rotate(30)" />
+                <rect x="-84" y="-244" width="84" height="100" fill="#BB9900" transform="rotate(60)" />
+                <rect x="0" y="-244" width="84" height="100" fill="#000099" transform="rotate(120)" />
+                <rect x="-84" y="-244" width="84" height="100" fill="#000099" transform="rotate(150)" />
+                <rect x="0" y="-244" width="84" height="100" fill="#CC7700" transform="rotate(210)" />
+                <rect x="-84" y="-244" width="84" height="100" fill="#CC7700" transform="rotate(240)" />
+
+                <circle cx="0" cy="0" r="168" fill="#666666" />
+                <circle cx="0" cy="0" r="160" fill="#111111" />
+
+                
+                <line id="hourMark" x1="0" y1="-144" x2="0" y2="-194" stroke-width="4" stroke="white" />
+                <use href="#hourMark" transform="rotate(30)" />
+                <use href="#hourMark" transform="rotate(60)" />
+                <use href="#hourMark" transform="rotate(90)" />
+                <use href="#hourMark" transform="rotate(120)" />
+                <use href="#hourMark" transform="rotate(150)" />
+                <use href="#hourMark" transform="rotate(180)" />
+                <use href="#hourMark" transform="rotate(210)" />
+                <use href="#hourMark" transform="rotate(240)" />
+                <use href="#hourMark" transform="rotate(270)" />
+                <use href="#hourMark" transform="rotate(300)" />
+                <use href="#hourMark" transform="rotate(330)" />
+
+                <g id="fiveMinutes">
+                    <line id="minuteMark" x1="0" y1="-160" x2="0" y2="-168" stroke-width="2" stroke="black" transform="rotate(6)" />
+                    <use href="#minuteMark" transform="rotate(6)" />
+                    <use href="#minuteMark" transform="rotate(12)" />
+                    <use href="#minuteMark" transform="rotate(18)" />
+                </g>
+                <g id="gauge" transform="rotate(30)">
+                    <line x1="0" y1="-160" x2="0" y2="-185" stroke-width="2" stroke="black" transform="rotate(6)" />
+                    <line x1="0" y1="-160" x2="0" y2="-176" stroke-width="2" stroke="black" transform="rotate(12)" />
+                    <line x1="0" y1="-160" x2="0" y2="-176" stroke-width="2" stroke="black" transform="rotate(18)" />
+                    <line x1="0" y1="-160" x2="0" y2="-185" stroke-width="2" stroke="black" transform="rotate(24)" />
+                </g>
+                <use href="#fiveMinutes" transform="rotate(60)" />
+                <use href="#fiveMinutes" transform="rotate(90)" />
+                <use href="#gauge" transform="rotate(90)" />
+                <use href="#fiveMinutes" transform="rotate(150)" />
+                <use href="#fiveMinutes" transform="rotate(180)" />
+                <use href="#gauge" transform="rotate(180)" />
+                <use href="#fiveMinutes" transform="rotate(240)" />
+                <use href="#fiveMinutes" transform="rotate(270)" />
+                <use href="#gauge" transform="rotate(270)" />
+                <use href="#fiveMinutes" transform="rotate(330)" />
+
+                <g id="hourHand" class="shadow">
+                    <line x1="0" y1="-20" x2="0" y2="120" stroke="#CCCCCC" stroke-width="8">
+                        <animateTransform attributeName="transform" type="rotate" dur="43200s" values="0;360"
+                            repeatCount="indefinite" />
+                    </line>
+                </g>
+                <g id="minuteHand" class="shadow">
+                    <line x1="0" y1="-20" x2="0" y2="100" stroke="#CCCCCC" stroke-width="6">
+                        <animateTransform attributeName="transform" type="rotate" dur="3600s" values="0;360"
+                            repeatCount="indefinite" />
+                    </line>
+                </g>
+                <g id="secondHand" class="shadow">
+                    <line x1="0" y1="-30" x2="0" y2="140" stroke="#CC1111" stroke-width="4">
+                        <animateTransform attributeName="transform" type="rotate" dur="60s" values="0;360"
+                            repeatCount="indefinite" />
+                    </line>
+                </g>
+                <circle cx="0" cy="0" r="5" fill="#CC1111" />
+
+            </g>
+
+            <line id="battery" class="shadow" x1="0" y1="0" x2="40" y2="40" stroke="#CCCCCC" stroke-width="5" transform="rotate(0)" />
+            <g transform="translate(336,0)"><line id="steps" class="shadow" x1="0" y1="0" x2="-40" y2="40" stroke="#CCCCCC" stroke-width="5" transform="rotate(0)" /></g>
+            <g transform="translate(336,336)"><line id="distance" class="shadow" x1="0" y1="0" x2="-40" y2="-40" stroke="#CCCCCC" stroke-width="5" transform="rotate(0)" /></g>
+            <g transform="translate(0,336)"><line id="zone" class="shadow" x1="0" y1="0" x2="40" y2="-40" stroke="#CCCCCC" stroke-width="5" transform="rotate(0)" /></g>
+
+        </svg>
+    </div>
+</body>
+
+</html>
