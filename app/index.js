@@ -26,6 +26,8 @@ const distanceBackground = document.getElementById("distanceBackground");
 const zoneBackground = document.getElementById("zoneBackground");
 const weatherGradient = document.getElementById("gradient");
 const weatherImage = document.getElementById("weatherImage");
+const sunrise = document.getElementById("sunrise");
+const sunset = document.getElementById("sunset");
 
 const body = null;
 if (BodyPresenceSensor) {
@@ -120,8 +122,37 @@ function processWeather(weather) {
     else dayNight = "n";
     weatherImage.href = `weather/${weatherCode}${dayNight}.png`;
 
+    var today = new Date();
+    var sunriseTime = new Date(weatherResult.sunrise);
+    var sunsetTime = new Date(weatherResult.sunset);
+
+    var nowHours = today.getHours();
+    var nowMinutes = today.getMinutes()
+    var sunriseHours = sunriseTime.getHours();
+    var sunriseMinutes = sunriseTime.getMinutes();
+    var sunsetHours = sunsetTime.getHours();
+    var sunsetMinutes = sunsetTime.getMinutes();
+
+    var nowAngle = ((360 / 24) * nowHours) + ((360 / 24 / 60) * nowMinutes)
+    var sunriseAngle = ((360 / 24) * sunriseHours) + ((360 / 24 / 60) * sunriseMinutes);
+    var sunsetAngle = ((360 / 24) * sunsetHours) + ((360 / 24 / 60) * sunsetMinutes);
+    sunset.startAngle = 180 - sunriseAngle;
+    sunset.sweepAngle = 360 - sunsetAngle + sunriseAngle;
+    document.getElementById("weatherRotate").groupTransform.rotate.angle = 360 - nowAngle;
+    document.getElementById("symbolRotate").groupTransform.rotate.angle = nowAngle;
+
     var statDisplay = currentCount / currentGoal * 360;
     statDisplay = Math.round(statDisplay);
     if (statDisplay > 360) statDisplay = 360;
 //    weatherGradient.groupTransform.rotate.angle = 360 - statDisplay;
+}
+
+Date.prototype.stdTimezoneOffset = function () {
+    var jan = new Date(this.getFullYear(), 0, 1);
+    var jul = new Date(this.getFullYear(), 6, 1);
+    return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+}
+
+Date.prototype.isDstObserved = function () {
+    return this.getTimezoneOffset() < this.stdTimezoneOffset();
 }
