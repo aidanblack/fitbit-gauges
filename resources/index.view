@@ -154,9 +154,9 @@ arc-width="5" start-angle="0" sweep-angle="360" /-->
 
 <!-- <mask id="weatherMask">
   <!-- <circle cx="228" cy="168" r="25"  /> -->
-  <arc id="sunrise" x="-65" y="-65" width="130" height="130" fill="#5599CC"
+  <arc id="sunrise" x="-65" y="-65" width="130" height="130" fill="#4488BB"
     arc-width="46" start-angle="0" sweep-angle="360" />
-  <arc id="sunset" x="-65" y="-65" width="130" height="130" fill="#2266AA"
+  <arc id="sunset" x="-65" y="-65" width="130" height="130" fill="#115599"
     arc-width="46" start-angle="0" sweep-angle="360" />
   <!-- </mask>
 <svg x="-168" y="-168" width="336" height="336" mask="#weatherMask">
