@@ -65,11 +65,6 @@
   <line class="shadow" x1="0" y1="0" x2="-130" y2="130" fill="white" stroke-width="4" />
 </g>
 
-<!-- <circle cx="50" cy="50" r="6" fill="black" />
-<circle cx="286" cy="50" r="6" fill="black" />
-<circle cx="50" cy="286" r="6" fill="black" />
-<circle cx="286" cy="286" r="6" fill="black" /> -->
-
   <g transform="translate(168,168)">
 
   <circle cx="0" cy="0" r="168" fill="#666666" />
@@ -145,11 +140,9 @@ arc-width="10" start-angle="0" sweep-angle="12" /></g>
 <g transform="rotate(60)" ><text x="0" y="86" fill="white" font-family="System-Regular" font-size="20" text-anchor="middle">20</text></g>
 <g transform="rotate(300)"><text x="0" y="-72" fill="white" font-family="System-Regular" font-size="20" text-anchor="middle">25</text></g>
 
-<!--arc x="-85" y="-25" width="50" height="50" fill="#666666"
-arc-width="5" start-angle="0" sweep-angle="360" /-->
 <circle cx="-135" cy="0" r="25" fill="#666666" />
 <circle cx="-135" cy="0" r="20" fill="black" />
-<image x="-150" y="-14" width="30" height="30" href="heart_rate_36px.png" fill="red" opacity="0.6" />
+<image x="-151" y="-15" width="32" height="32" href="heart_rate_36px.png" fill="red" opacity="0.6" />
 <text id="heartRate" x="-135" y="6" fill="white" text-length="3"
   font-family="System-Regular" font-size="20" text-anchor="middle">bpm</text>
 
@@ -158,28 +151,12 @@ arc-width="5" start-angle="0" sweep-angle="360" /-->
 <text id="temperature" x="135" y="6" fill="white" text-length="5"
   font-family="System-Regular" font-size="20" text-anchor="middle">0°</text>
 
-<!-- <mask id="weatherMask">
-  <!-- <circle cx="228" cy="168" r="25"  /> -->
   <arc id="sunrise" x="-66" y="-66" width="132" height="132" fill="#4488BB"
     arc-width="30" start-angle="0" sweep-angle="360" />
   <arc id="sunset" x="-66" y="-66" width="132" height="132" fill="#115599"
     arc-width="30" start-angle="0" sweep-angle="360" />
-  <!-- </mask>
-<svg x="-168" y="-168" width="336" height="336" mask="#weatherMask">
-  <g transform="translate(263,173)">
-  <g id="gradient">
-    <gradientRect x="-60" y="-60" width="120" height="120"
-      gradient-type="bilinear"
-      gradient-x1="30" gradient-y1="30"
-      gradient-x2="90" gradient-y2="90"
-      gradient-color1="blue"
-      gradient-color2="green"
-      gradient-color3="red"
-      gradient-color4="yellow" />
-  </g>
-</g>
-</svg> -->
-<g id="weatherRotate">
+
+  <g id="weatherRotate">
   <g transform="translate(0,50)">
     <g  id="symbolRotate">
       <image id="weatherImage" x="-20" y="-20" width="40" height="40" href="" />
