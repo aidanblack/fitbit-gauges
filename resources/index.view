@@ -128,13 +128,13 @@ arc-width="10" start-angle="0" sweep-angle="12" /></g>
 <g transform="rotate(0)"  ><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">12</text></g>
 <g transform="rotate(30)" ><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">1</text></g>
 <g transform="rotate(60)" ><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">2</text></g>
-<g transform="rotate(90)" ><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">3</text></g>
+<!-- <g transform="rotate(90)" ><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">3</text></g> -->
 <g transform="rotate(300)"><text x="0" y="145" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">4</text></g>
 <g transform="rotate(330)"><text x="0" y="145" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">5</text></g>
-<!--g transform="rotate(0)"  ><text x="0" y="145" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">6</text></g-->
+<g transform="rotate(0)"  ><text x="0" y="145" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">6</text></g>
 <g transform="rotate(30)" ><text x="0" y="145" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">7</text></g>
 <g transform="rotate(60)" ><text x="0" y="145" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">8</text></g>
-<g transform="rotate(270)"><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">9</text></g>
+<!-- <g transform="rotate(270)"><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">9</text></g> -->
 <g transform="rotate(300)"><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">10</text></g>
 <g transform="rotate(330)"><text x="0" y="-125" fill="white" font-family="System-Regular" font-size="30" text-anchor="middle">11</text></g>
 
@@ -147,10 +147,16 @@ arc-width="10" start-angle="0" sweep-angle="12" /></g>
 
 <!--arc x="-85" y="-25" width="50" height="50" fill="#666666"
 arc-width="5" start-angle="0" sweep-angle="360" /-->
-<circle cx="0" cy="135" r="25" fill="#666666" />
-<circle cx="0" cy="135" r="20" fill="black" />
-<text id="heartRate" x="0" y="142" fill="white"
+<circle cx="-135" cy="0" r="25" fill="#666666" />
+<circle cx="-135" cy="0" r="20" fill="black" />
+<image x="-150" y="-14" width="30" height="30" href="heart_rate_36px.png" fill="red" opacity="0.6" />
+<text id="heartRate" x="-135" y="6" fill="white" text-length="3"
   font-family="System-Regular" font-size="20" text-anchor="middle">bpm</text>
+
+<circle cx="135" cy="0" r="25" fill="#666666" />
+<circle cx="135" cy="0" r="20" fill="black" />
+<text id="temperature" x="135" y="6" fill="white" text-length="5"
+  font-family="System-Regular" font-size="20" text-anchor="middle">0°</text>
 
 <!-- <mask id="weatherMask">
   <!-- <circle cx="228" cy="168" r="25"  /> -->

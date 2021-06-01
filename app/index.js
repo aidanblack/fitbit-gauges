@@ -28,6 +28,7 @@ const weatherGradient = document.getElementById("gradient");
 const weatherImage = document.getElementById("weatherImage");
 const sunrise = document.getElementById("sunrise");
 const sunset = document.getElementById("sunset");
+const temperature = document.getElementById("temperature");
 
 const body = null;
 if (BodyPresenceSensor) {
@@ -141,10 +142,7 @@ function processWeather(weather) {
     document.getElementById("weatherRotate").groupTransform.rotate.angle = 360 - nowAngle;
     document.getElementById("symbolRotate").groupTransform.rotate.angle = nowAngle;
 
-    var statDisplay = currentCount / currentGoal * 360;
-    statDisplay = Math.round(statDisplay);
-    if (statDisplay > 360) statDisplay = 360;
-//    weatherGradient.groupTransform.rotate.angle = 360 - statDisplay;
+    temperature.text = currentCount + "°";
 }
 
 Date.prototype.stdTimezoneOffset = function () {
