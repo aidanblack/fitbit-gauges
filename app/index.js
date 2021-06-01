@@ -1,5 +1,6 @@
 import clock from "clock";
 import document from "document";
+import * as messaging from "messaging";
 import { me } from "appbit";
 import { battery } from "power";
 import { HeartRateSensor } from "heart-rate";
@@ -7,6 +8,7 @@ import { BodyPresenceSensor } from "body-presence";
 import { today } from "user-activity";
 import { goals } from "user-activity";
 import * as weather from "fitbit-weather/app";
+import * as simpleSettings from "./device-settings";
 
 clock.granularity = "seconds";
 
@@ -29,6 +31,25 @@ const weatherImage = document.getElementById("weatherImage");
 const sunrise = document.getElementById("sunrise");
 const sunset = document.getElementById("sunset");
 const temperature = document.getElementById("temperature");
+
+// ***** Settings *****
+
+const settings;
+
+function settingsCallback(data) {
+  settings = data;
+}
+
+simpleSettings.initialize(settingsCallback);
+
+messaging.peerSocket.addEventListener("message", (evt) => {
+  if (evt && evt.data && evt.data.key) {
+    settings[evt.data.key] = evt.data.value;
+    //console.log(`${evt.data.key} : ${evt.data.value}`); // Good for debugging
+  }
+});
+
+// ***** Body Presence and Heart Rate *****
 
 const body = null;
 if (BodyPresenceSensor) {
@@ -55,6 +76,8 @@ if (HeartRateSensor) {
         }
     });
 }
+
+// ***** Clock *****
 
 clock.ontick = (evt) => {
     let now = evt.date;
@@ -84,6 +107,8 @@ clock.ontick = (evt) => {
     .catch(error => console.log(JSON.stringify(error)));
 }
 
+// ***** Stats *****
+
 function updateStats() {
     //     if (mode == modes.HeartRate) {
     //     meter.text = "H/B";
@@ -112,10 +137,17 @@ function updateStats() {
     zoneGauge.groupTransform.rotate.angle = Math.min(-15 + ((zoneCount / zoneGoal) * 30), 12);
 }
 
+// ***** Weather *****
+
 function processWeather(weather) {
     var weatherResult = weather;
 
-    var currentCount = Math.round(weatherResult.temperatureF);
+    var currentCount;
+    if (settings.tempUnit.selected == "1")
+        currentCount = Math.round(weather.temperatureF);
+    else
+        currentCount = Math.round(weather.temperatureC);
+
     var currentGoal = 120;
     var weatherCode = weatherResult.conditionCode;
     var dayNight;
@@ -144,6 +176,8 @@ function processWeather(weather) {
 
     temperature.text = currentCount + "°";
 }
+
+// ***** Helpers *****
 
 Date.prototype.stdTimezoneOffset = function () {
     var jan = new Date(this.getFullYear(), 0, 1);
