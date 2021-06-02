@@ -1,6 +1,6 @@
 {
-  "name": "fitbit-gauges",
-  "version": "0.1.0",
+  "name": "gauges",
+  "version": "1.1.3",
   "private": true,
   "license": "UNLICENSED",
   "devDependencies": {
@@ -10,7 +10,7 @@
   "fitbit": {
     "appUUID": "14697995-0985-4c27-bbed-a83c716dbb91",
     "appType": "clockface",
-    "appDisplayName": "Fitbit Gauges",
+    "appDisplayName": "Gauges",
     "iconFile": "resources/icon.png",
     "wipeColor": "#ffffff",
     "requestedPermissions": [
