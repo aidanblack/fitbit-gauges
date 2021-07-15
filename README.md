@@ -1,5 +1,6 @@
 # fitbit-gauges
 ## Analog clock with sensor info for Fitbit Versa 3 and Sense
+### https://gallery.fitbit.com/details/14697995-0985-4c27-bbed-a83c716dbb91
 
 This is an analog clock with selected sensor information, plus date and weather. Included sensors are: 
 + Battery
